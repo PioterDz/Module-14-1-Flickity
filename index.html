@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>module 14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
     <link rel="stylesheet" href="vendor/normalize.css">
@@ -11,35 +12,41 @@
 </head>
 <body>
     <div class="main-carousel">
-        <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg)">
+        <div class="carousel-cell carousel" id="carousel-cell1" style="background-image: url(https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg)">
             <div class="container">
-                <p>Stambuł</p>
+                <h1>{{{ title }}}</h1>
+                <p>{{{ description }}}</p>
             </div>
 
         </div>
-        <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==)">
+        <div class="carousel-cell carousel" id="carousel-cell2" style="background-image: url(https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==)">
             <div class="container">
-                <p>Sahara</p>
+                <h1>{{{ title }}}</h1>
+                <p>{{{ description }}}</p>
             </div>
         </div>
-        <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg)">
+        <div class="carousel-cell carousel" id="carousel-cell3" style="background-image: url(https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg)">
             <div class="container">
-                <p>Filipiny</p>
+                <h1>{{{ title }}}</h1>
+                <p>{{{ description }}}</p>
             </div>
         </div>
-        <div class="carousel-cell" id="carousel-cell4" style="background-image: url(http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg)">
+        <div class="carousel-cell carousel" id="carousel-cell4" style="background-image: url(http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg)">
             <div class="container">
-                <p>Wietnam</p>
+                <h1>{{{ title }}}</h1>
+                <p>{{{ description }}}</p>
             </div>
         </div>
-        <div class="carousel-cell" id="carousel-cell5" style="background-image: url(http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png)">
+        <div class="carousel-cell carousel" id="carousel-cell5" style="background-image: url(http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png)">
             <div class="container">
-                <p>Gruzja</p>
+                <h1>{{{ title }}}</h1>
+                <p>{{{ description }}}</p>
             </div>
         </div>
-        <div class="carousel-cell" id="carousel-cell6" style="background-image: url(https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg)">
+        <div class="carousel-cell carousel" id="carousel-cell6" style="background-image: url(https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg)">
             <div class="container">
-                <p>Zakynthos</p>
+                <h1>{{{ title }}}</h1>
+                <p>{{{ description }}}</p>
             </div>
         </div>
         <div class="progress-bar"></div>
@@ -56,6 +63,40 @@
     </div>
     <script src="vendor/hash.js"></script>
     <script src="vendor/flickity.pkgd.min.js"></script>
+    <script id="template" type="x-tmpl-mustache">
+        var properties = [
+            {
+                image: 'https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg',
+                title: 'Stambuł',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==',
+                title: 'Sahara',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg',
+                title: 'Filipiny',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg',
+                title: 'Wietnam',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png',
+                title: 'Gruzja',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            },
+            {
+                image: 'https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg',
+                title: 'Zakynthos',
+                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+            }
+        ]
+    </script>
     <script src="js/script.js"></script>
-</body>`
+</body>
 </html>
