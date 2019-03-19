@@ -15,7 +15,6 @@
     "build:sass": "node-sass --output-style compact -o css sass",
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-    "build:mustache": "mustache dataView.json myTemplate.mustache > public/output.html",
     "watch": "npm-run-all build -p watch:*",
     "watch:sassprefixer": "onchange -d 100 sass/* -- run-s compiler",
     "prefixer": "autoprefixer-cli -o css/style.css",
