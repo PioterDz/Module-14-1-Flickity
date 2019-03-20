@@ -1,25 +1,30 @@
 var elem = document.querySelector('.main-carousel');
+var progressBar = document.querySelector('.progress-bar');
+var returnButton = document.getElementById('button-return');
+
 var flkty = new Flickity( elem, {
   // options
   cellAlign: 'left',
   contain: true
+
 });
 
-// element argument can be a selector string
-//   for an individual element
-var flkty = new Flickity( '.main-carousel', {
-  // options
-});
+returnButton.addEventListener('click', flkty.select( 0, false, false ));
 
-var flkty = new Flickity( '.carousel', {
+function scroll(progress) {
+  progress = Math.max( 0, Math.min( 1, progress ) );
+  progressBar.style.width = progress * 100 + '%';
+  console.log( 'Flickity scrolled ' + progress * 100 + '%' );
+}
+
+flkty.on( 'scroll', scroll(0.16));
+
+
+
+var flkty = new Flickity( '.view-cells', {
   hash: true,
 });
 
-var progressBar = document.querySelector('.progress-bar')
 
-flkty.on( 'scroll', function( progress ) {
-  progress = Math.max( 0, Math.min( 1, 0.16 ) );
-  progressBar.style.width = progress * 100 + '%';
-});
 
 

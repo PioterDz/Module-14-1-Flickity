@@ -40,6 +40,11 @@ i {
 .view-cells a {
   text-decoration: none;
   color: black;
-  margin: 26px 0; }
+  margin: 26px 10px; }
   .view-cells a:hover {
     color: grey; }
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background: #333; }
