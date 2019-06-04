@@ -4,26 +4,18 @@ var returnButton = document.getElementById('button-return');
 
 var flkty = new Flickity( elem, {
   // options
+  hash: true,
   cellAlign: 'left',
   contain: true
-
 });
 
-returnButton.addEventListener('click', flkty.select( 0, false, false ));
+var flkty = new Flickity('.carousel');
 
-function scroll(progress) {
-  progress = Math.max( 0, Math.min( 1, progress ) );
-  progressBar.style.width = progress * 100 + '%';
-  console.log( 'Flickity scrolled ' + progress * 100 + '%' );
-}
+returnButton.addEventListener('click', flkty.select( 0, true, true ));
 
-flkty.on( 'scroll', scroll(0.16));
+flkty.on( 'scroll', scroll(1));
 
 
-
-var flkty = new Flickity( '.view-cells', {
-  hash: true,
-});
 
 
 
