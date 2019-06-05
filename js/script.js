@@ -22,6 +22,7 @@ var flkty = new Flickity( elem, {
   wrapAround: true
 });
 
+
 flkty.on('scroll', function(progress) {
   progress = Math.max( 0, Math.min( 1, progress ) );
   progressBar.style.width = progress * 100 + '%';
@@ -42,7 +43,7 @@ window.initMap = function() {
     {lat: 14.600314, lng: 120.982307},
     {lat: 10.822057, lng: 106.630707},
     {lat: 41.730634, lng: 44.831105},
-    {lat: 37.803386, lng: 20.904719},
+    {lat: 37.803386, lng: 20.904719}
   ]
   var name = ['Stambuł', 'Sahara', 'Filipiny', 'Wietnam', 'Gruzja', 'Zakynthos'];
 
@@ -57,9 +58,14 @@ window.initMap = function() {
     });
     marker.addListener('click', function() {
       infos.innerHTML = name[i];
-      console.log(i, name, name[i], 'name');
+      var index = i;
+      flkty.select(index, true, true);
     });
   }
+
+  flkty.on( 'change', function( index ) {
+    new google.maps.Map(document.getElementById('map'), {zoom: 5, center: position[index]});
+  });
 }
 
 
