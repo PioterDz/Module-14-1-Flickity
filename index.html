@@ -3,33 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>module 14</title>
-    <link rel="stylesheet" href="vendor/flickity.min.css" media="screen">
-    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="./vendor/normalize.css">
+    <link rel="stylesheet" href="./vendor/flickity.min.css" media="screen">
+    <link rel="stylesheet" href="./css/style.css">    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 </head>
 <body>
     <div class="main-carousel">
-        <div class="carousel-cell">
+        <div class="carousel-cell" id="carousel-cell1" style="background-image: url(https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg)">
+            <div class="container">
+                <p>Stambuł</p>
+            </div>
 
         </div>
-        <div class="carousel-cell">
-
+        <div class="carousel-cell" id="carousel-cell2" style="background-image: url(https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==)">
+            <div class="container">
+                <p>Sahara</p>
+            </div>
         </div>
-        <div class="carousel-cell">
-
+        <div class="carousel-cell" id="carousel-cell3" style="background-image: url(https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg)">
+            <div class="container">
+                <p>Filipiny</p>
+            </div>
         </div>
-        <div class="carousel-cell">
-
+        <div class="carousel-cell" id="carousel-cell4" style="background-image: url(http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg)">
+            <div class="container">
+                <p>Wietnam</p>
+            </div>
         </div>
-        <div class="carousel-cell">
-
+        <div class="carousel-cell" id="carousel-cell5" style="background-image: url(http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png)">
+            <div class="container">
+                <p>Gruzja</p>
+            </div>
         </div>
-        <div class="carousel-cell">
-            
+        <div class="carousel-cell" id="carousel-cell6" style="background-image: url(https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg)">
+            <div class="container">
+                <p>Zakynthos</p>
+            </div>
         </div>
     </div>
-
-
-    <script src="vendor/flickity.pkgd.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
+    <i class="fas fa-undo" id="button"></i>
+    <div class="progress-bar"></div>
+    <div class="view-cells">
+        <p>View:</p>
+        <a href="#carousel-cell1">Stambuł, </a>
+        <a href="#carousel-cell2">Sahara, </a>
+        <a href="#carousel-cell3">Filipiny, </a>
+        <a href="#carousel-cell4">Wietnam, </a>
+        <a href="#carousel-cell5">Gruzja, </a>
+        <a href="#carousel-cell6">Zakynthos</a>
+    </div>
+    
+    <script src="./vendor/flickity.pkgd.min.js"></script>
+    <script src="./vendor/hash.js"></script>
+    <script src="./js/script.js"></script>
+</body>`
 </html>
