@@ -32,14 +32,34 @@ returnButton.addEventListener('click', function(event) {
   flkty.select(index, true, true);
 });
 
+var infos = document.getElementById('infos');
+
 window.initMap = function() {
-  // The location of Uluru
-  var uluru = {lat: -25.344, lng: 131.036};
-  // The map, centered at Uluru
+
+  var position = [
+    {lat: 41.009900, lng: 28.979228},
+    {lat: 32.423594, lng: 8.204294},
+    {lat: 14.600314, lng: 120.982307},
+    {lat: 10.822057, lng: 106.630707},
+    {lat: 41.730634, lng: 44.831105},
+    {lat: 37.803386, lng: 20.904719},
+  ]
+  var name = ['Stambuł', 'Sahara', 'Filipiny', 'Wietnam', 'Gruzja', 'Zakynthos'];
+
+
   var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 4, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
+    document.getElementById('map'), {zoom: 3, center: position[0]});
+
+  for (let i=0 ; i<position.length ; i++) {
+    var marker = new google.maps.Marker({
+      position: position[i],
+      map: map
+    });
+    marker.addListener('click', function() {
+      infos.innerHTML = name[i];
+      console.log(i, name, name[i], 'name');
+    });
+  }
 }
 
 
