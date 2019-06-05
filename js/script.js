@@ -1,6 +1,13 @@
-for(var i = 0; i < properties.length; i++){
+var templateItem = document.getElementById('template-slide').innerHTML;
+
+Mustache.parse(templateItem);
+
+var listItems = '';
+
+for(var i = 0; i < properties.length; i++) {
   console.log(properties);
   listItems += Mustache.render(templateItem, properties[i]);
+  console.log(listItems);
 }
 
 var elem = document.querySelector('.main-carousel');

@@ -5,47 +5,60 @@
     <title>module 14</title>
     <link rel="stylesheet" href="./vendor/normalize.css">
     <link rel="stylesheet" href="./vendor/flickity.min.css" media="screen">
-    <link rel="stylesheet" href="./css/style.css">    
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
 </head>
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
     <div class="main-carousel">
         <div class="carousel-cell carousel" id="carousel-cell1" style="background-image: url(https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg)">
             <div class="container">
-                <h1>{{{ title }}}</h1>
-                <p>{{{ description }}}</p>
+                <script id="template-slide" type="x-tmpl-mustache">
+                    <h1>{{ title }}</h1>
+                    <p>{{{ description }}}</p>
+                </script>
             </div>
 
         </div>
         <div class="carousel-cell carousel" id="carousel-cell2" style="background-image: url(https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==)">
             <div class="container">
-                <h1>{{{ title }}}</h1>
-                <p>{{{ description }}}</p>
+                <script id="template-slide" type="x-tmpl-mustache">
+                    <h1>{{ title }}</h1>
+                    <p>{{{ description }}}</p>
+                </script>
             </div>
         </div>
         <div class="carousel-cell carousel" id="carousel-cell3" style="background-image: url(https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg)">
             <div class="container">
-                <h1>{{{ title }}}</h1>
-                <p>{{{ description }}}</p>
+                <script id="template-slide" type="x-tmpl-mustache">
+                    <h1>{{ title }}</h1>
+                    <p>{{{ description }}}</p>
+                </script>
             </div>
         </div>
         <div class="carousel-cell carousel" id="carousel-cell4" style="background-image: url(http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg)">
             <div class="container">
-                <h1>{{{ title }}}</h1>
-                <p>{{{ description }}}</p>
+                <script id="template-slide" type="x-tmpl-mustache">
+                    <h1>{{ title }}</h1>
+                    <p>{{{ description }}}</p>
+                </script>
             </div>
         </div>
         <div class="carousel-cell carousel" id="carousel-cell5" style="background-image: url(http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png)">
             <div class="container">
-                <h1>{{{ title }}}</h1>
-                <p>{{{ description }}}</p>
+                <script id="template-slide" type="x-tmpl-mustache">
+                    <h1>{{ title }}</h1>
+                    <p>{{{ description }}}</p>
+                </script>
             </div>
         </div>
         <div class="carousel-cell carousel" id="carousel-cell6" style="background-image: url(https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg)">
             <div class="container">
-                <h1>{{{ title }}}</h1>
-                <p>{{{ description }}}</p>
+                <script id="template-slide" type="x-tmpl-mustache">
+                    <h1>{{ title }}</h1>
+                    <p>{{{ description }}}</p>
+                </script>
             </div>
         </div>
     </div>
@@ -60,9 +73,10 @@
         <a href="#carousel-cell5">Gruzja, </a>
         <a href="#carousel-cell6">Zakynthos</a>
     </div>
+
     <script src="./vendor/flickity.pkgd.min.js"></script>
     <script src="./vendor/hash.js"></script>
-    <script id="template" type="x-tmpl-mustache">
+    <script>
         var properties = [
             {
                 image: 'https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg',
@@ -94,7 +108,7 @@
                 title: 'Zakynthos',
                 description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
             }
-        ]
+        ];
     </script>
     <script src="js/script.js"></script>
 </body>
