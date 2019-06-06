@@ -43,32 +43,22 @@ returnButton.addEventListener('click', function(event) {
   flkty.select(index, true, true);
 });
 
+// GoogleMap
+
 var infos = document.getElementById('infos');
 
 window.initMap = function() {
 
-  var position = [
-    {lat: 41.009900, lng: 28.979228},
-    {lat: 32.423594, lng: 8.204294},
-    {lat: 14.600314, lng: 120.982307},
-    {lat: 10.822057, lng: 106.630707},
-    {lat: 41.730634, lng: 44.831105},
-    {lat: 37.803386, lng: 20.904719},
-  ]
-  var name = ['Stambuł', 'Sahara', 'Filipiny', 'Wietnam', 'Gruzja', 'Zakynthos'];
-
-
   var map = new google.maps.Map(
-    document.getElementById('map'), {zoom: 3, center: position[0]});
+    document.getElementById('map'), {zoom: 3, center: properties[0].position});
 
-  for (let i=0 ; i<position.length ; i++) {
+  for (let i=0 ; i<properties.length ; i++) {
     var marker = new google.maps.Marker({
-      position: position[i],
+      position: properties[i].position,
       map: map
     });
     marker.addListener('click', function() {
-      infos.innerHTML = name[i];
-      console.log(i, name, name[i], 'name');
+      infos.innerHTML = properties[i].title;
     });
   }
 }
