@@ -1,18 +1,29 @@
 var templateItem = document.getElementById('template-slide').innerHTML;
+var templateViewCells = document.getElementById('template-view-cells').innerHTML;
+var elem = document.querySelector('.main-carousel');
+var viewCells = document.querySelector('.view-cells');
+var progressBar = document.querySelector('.progress-bar');
+var returnButton = document.getElementById('button');
+
+// Mustache
 
 Mustache.parse(templateItem);
 
-var listItems = '';
-
 for(var i = 0; i < properties.length; i++) {
-  console.log(properties);
-  listItems += Mustache.render(templateItem, properties[i]);
-  console.log(listItems);
+  var div = document.createElement('div');
+  div = Mustache.render(templateItem, properties[i]);
+  elem.insertAdjacentHTML('beforeend', div);
 }
 
-var elem = document.querySelector('.main-carousel');
-var progressBar = document.querySelector('.progress-bar');
-var returnButton = document.getElementById('button');
+Mustache.parse(templateViewCells);
+
+for(var i = 0; i < properties.length; i++) {
+  var secondDiv = document.createElement('div');
+  secondDiv = Mustache.render(templateViewCells, properties[i]);
+  viewCells.insertAdjacentHTML('beforeend', secondDiv);
+}
+
+// Flickty
 
 var flkty = new Flickity( elem, {
   // options
