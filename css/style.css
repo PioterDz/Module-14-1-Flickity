@@ -13,8 +13,9 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; }
-  .carousel-cell p {
+    align-items: center;
+    flex-direction: column; }
+  .carousel-cell h1, .carousel-cell p {
     color: white;
     font-family: 'Amatic SC', cursive;
     font-size: 26px; }

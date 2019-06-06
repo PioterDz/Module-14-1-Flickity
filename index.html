@@ -11,67 +11,23 @@
 </head>
 <body>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script id="template-slide" type="x-tmpl-mustache">
+        <div class="carousel-cell" style="background-image: url({{ image }})">
+            <div class="container">
+                <h1>{{ title }}</h1>
+                {{{ description }}}
+            </div>
+        </div>
+    </script>
+    <script id="template-view-cells" type="x-tmpl-mustache">
+        <a href="#carousel-cell{{ number }}">{{ title }}</a>
+    </script>
     <div class="main-carousel">
-        <div class="carousel-cell carousel" id="carousel-cell1" style="background-image: url(https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg)">
-            <div class="container">
-                <script id="template-slide" type="x-tmpl-mustache">
-                    <h1>{{ title }}</h1>
-                    <p>{{{ description }}}</p>
-                </script>
-            </div>
-
-        </div>
-        <div class="carousel-cell carousel" id="carousel-cell2" style="background-image: url(https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==)">
-            <div class="container">
-                <script id="template-slide" type="x-tmpl-mustache">
-                    <h1>{{ title }}</h1>
-                    <p>{{{ description }}}</p>
-                </script>
-            </div>
-        </div>
-        <div class="carousel-cell carousel" id="carousel-cell3" style="background-image: url(https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg)">
-            <div class="container">
-                <script id="template-slide" type="x-tmpl-mustache">
-                    <h1>{{ title }}</h1>
-                    <p>{{{ description }}}</p>
-                </script>
-            </div>
-        </div>
-        <div class="carousel-cell carousel" id="carousel-cell4" style="background-image: url(http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg)">
-            <div class="container">
-                <script id="template-slide" type="x-tmpl-mustache">
-                    <h1>{{ title }}</h1>
-                    <p>{{{ description }}}</p>
-                </script>
-            </div>
-        </div>
-        <div class="carousel-cell carousel" id="carousel-cell5" style="background-image: url(http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png)">
-            <div class="container">
-                <script id="template-slide" type="x-tmpl-mustache">
-                    <h1>{{ title }}</h1>
-                    <p>{{{ description }}}</p>
-                </script>
-            </div>
-        </div>
-        <div class="carousel-cell carousel" id="carousel-cell6" style="background-image: url(https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg)">
-            <div class="container">
-                <script id="template-slide" type="x-tmpl-mustache">
-                    <h1>{{ title }}</h1>
-                    <p>{{{ description }}}</p>
-                </script>
-            </div>
-        </div>
     </div>
     <i class="fas fa-undo" id="button"></i>
     <div class="progress-bar"></div>
     <div class="view-cells">
         <p>View:</p>
-        <a href="#carousel-cell1">Stambuł, </a>
-        <a href="#carousel-cell2">Sahara, </a>
-        <a href="#carousel-cell3">Filipiny, </a>
-        <a href="#carousel-cell4">Wietnam, </a>
-        <a href="#carousel-cell5">Gruzja, </a>
-        <a href="#carousel-cell6">Zakynthos</a>
     </div>
 
     <h3>My Google Maps Demo</h3>
@@ -85,32 +41,38 @@
             {
                 image: 'https://blog.esky.pl/wp-content/uploads/2010/06/Stambu%C5%82-Zatoka-Z%C5%82oty-R%C3%B3g.jpg',
                 title: 'Stambuł',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p>',
+                number: '1'
             },
             {
                 image: 'https://img.purch.com/h/1000/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAzMC85NzIvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzkzNDA0Mjg3LmpwZw==',
                 title: 'Sahara',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p>',
+                number: '2'
             },
             {
                 image: 'https://photos.adventureinyou.com/wp-content/uploads/2015/04/22141447/best-places-stay-palawan_LEAD.jpg',
                 title: 'Filipiny',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p>',
+                number: '3'
             },
             {
                 image: 'http://plecakiwalizka.com/wp-content/uploads/2018/02/DSC05922.jpg',
                 title: 'Wietnam',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p>',
+                number: '4'
             },
             {
                 image: 'http://hotelservice24.pl/wp-content/uploads/2016/03/gruzja_blog.png',
                 title: 'Gruzja',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p>',
+                number: '5'
             },
             {
                 image: 'https://www.eilandzakynthos.nl/fotos/zakynthos/1200px/fotos-zakynthos-036.jpg',
                 title: 'Zakynthos',
-                description: '<p>Lorem ipsum.</p> <img src="http://via.placeholder.com/400x200" alt="Photo placeholder"> <p>Dolor sit.</p>'
+                description: '<p>Lorem ipsum.</p> <p>Dolor sit.</p>',
+                number: '6'
             }
         ];
     </script>
