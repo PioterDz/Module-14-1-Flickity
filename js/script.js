@@ -8,21 +8,18 @@ var returnButton = document.getElementById('button');
 // Mustache
 
 Mustache.parse(templateItem);
-
-for(var i = 0; i < properties.length; i++) {
-  var div = document.createElement('div');
-  div = Mustache.render(templateItem, properties[i]);
-  elem.insertAdjacentHTML('beforeend', div);
-}
-
 Mustache.parse(templateViewCells);
 
-for(var i = 0; i < properties.length; i++) {
-  var secondDiv = document.createElement('div');
-  secondDiv = Mustache.render(templateViewCells, properties[i]);
-  viewCells.insertAdjacentHTML('beforeend', secondDiv);
+function createTemplate(template, container, i) {
+  var div = document.createElement('div');
+  div = Mustache.render(template, properties[i]);
+  container.insertAdjacentHTML('beforeend', div);
 }
 
+for(let i = 0; i <properties.length; i++) {
+  createTemplate(templateItem, elem, i);
+  createTemplate(templateViewCells, viewCells, i);
+}
 // Flickty
 
 var flkty = new Flickity( elem, {
@@ -47,23 +44,22 @@ returnButton.addEventListener('click', function(event) {
 
 var infos = document.getElementById('infos');
 
-window.initMap = function() {
 
+window.initMap = function() {
+  
   var map = new google.maps.Map(
     document.getElementById('map'), {zoom: 3, center: properties[0].position});
 
-  for (let i=0 ; i<properties.length ; i++) {
-    var marker = new google.maps.Marker({
-      position: properties[i].position,
-      map: map
-    });
-    marker.addListener('click', function() {
-      infos.innerHTML = properties[i].title;
-    });
-  }
+    for (let i=0 ; i<properties.length ; i++) {
+      var marker = new google.maps.Marker({
+        position: properties[i].position,
+        map: map
+      });
+      marker.addListener('click', function() {
+        infos.innerHTML = properties[i].title;
+      });
+    }
 }
-
-
 
 
 
